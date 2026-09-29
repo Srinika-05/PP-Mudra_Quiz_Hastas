@@ -14,16 +14,20 @@ AHmeaning = ["flag" , "flag with three corners" , "half flag" , "scissors" , "pe
              "bee" , "swan beak" , "swan wing" , "pincers" , "blossom" , "cock" , "trident"]
 
 
-word = random.choice(AsamyutaHasta)
-index = AsamyutaHasta.index(word)
+word = random.choice(AHmeaning)
+index = AHmeaning.index(word)
 
-meaning = AHmeaning[index]
+word1 = AsamyutaHasta[index]
 
-print("What Asamutha Hasta is \n" , meaning , "\nreffering to?")
+print("What Asamutha Hasta meaning is \n" , word1 , "\nreffering to?")
 userInput = input("Type your answer in lowercase: \n")
 
-if userInput == word: 
+if userInput == word1: 
     print("\nCorrect!")
 else:
     print("\nOh wrong answer. Try again!")
     userInput = input("Type your answer: \n")
+    if userInput == word1: 
+        print("\nCorrect!")
+
+    
