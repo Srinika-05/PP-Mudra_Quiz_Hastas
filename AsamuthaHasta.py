@@ -14,20 +14,55 @@ AHmeaning = ["flag" , "flag with three corners" , "half flag" , "scissors" , "pe
              "bee" , "swan beak" , "swan wing" , "pincers" , "blossom" , "cock" , "trident"]
 
 
-word = random.choice(AHmeaning)
-index = AHmeaning.index(word)
+def nextWord():
+    meaning = random.choice(AHmeaning)
+    corespword = AHmeaning.index(meaning)
+    word = AsamyutaHasta[corespword]
 
-word1 = AsamyutaHasta[index]
+    print("What does the word\n" + word + "\nmean? ")
+    AsamyutaHasta.pop(corespword)
+    AHmeaning.pop(corespword)
 
-print("What Asamutha Hasta meaning is \n" , word1 , "\nreffering to?")
-userInput = input("Type your answer in lowercase: \n")
+    return meaning
 
-if userInput == word1: 
-    print("\nCorrect!")
-else:
-    print("\nOh wrong answer. Try again!")
-    userInput = input("Type your answer: \n")
-    if userInput == word1: 
-        print("\nCorrect!")
+
+count = 0
+score = 0
+
+print("Hello! This is the Asamyutha Hasta Quiz. Please follow the directions!\n")
+
+wordMeans = nextWord()
+userGuess = input("Type your answer in lowercase: \n")
+
+while count < 4:
+    if userGuess == wordMeans:
+        print("\nCorrect meaning!")
+        count += 1
+        #score += 1
+        print("\nNext Round: \n")
+        wordMeans = nextWord()
+        userGuess = input("Type your answer in lowercase: \n")
+    else:
+        print("\nIncorrect answer. The answer was: \n" + wordMeans)
+        wordMeans = nextWord()
+        userGuess = input("Type your answer in lowercase: \n")
+        
+
+
+#print("Points you got: " + str(score))
+
+    
+
+# count += 1
+# print("\nYour final score: " + str(count) + "/5")
+
+
+# if userInput == word1: 
+#     print("\nCorrect!")
+# else:
+#     print("\nOh wrong answer. Try again!")
+#     userInput = input("Type your answer: \n")
+#     if userInput == word1: 
+#         print("\nCorrect!")
 
     
