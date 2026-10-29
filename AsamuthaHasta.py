@@ -26,43 +26,75 @@ def nextWord():
     return meaning
 
 
-count = 0
-score = 0
+def startAHgame():
+    count = 0
+    score = 0
 
-print("Hello! This is the Asamyutha Hasta Quiz. Please follow the directions!\n")
+    print("---------------------------------------------------------------------------")
+    print("Hello! This is the Asamyutha Hasta Quiz. Please follow the directions!\n")
 
-wordMeans = nextWord()
-userGuess = input("Type your answer in lowercase: \n")
 
-while count < 4:
-    if userGuess == wordMeans:
-        print("\nCorrect meaning!")
+    wordMeans = nextWord()
+    userGuess = input("Type your answer in lowercase: \n").lower()
+
+    while count < 5:
+        if userGuess == wordMeans:
+            print("\nCorrect meaning!")
+            
+            score += 1
+            print("\nNext Round: \n")
+            wordMeans = nextWord()
+            userGuess = input("Type your answer in lowercase: \n")
+        else:
+            print("\nIncorrect answer. The answer was: \n" + wordMeans + "\n")
+            wordMeans = nextWord()
+            userGuess = input("Type your answer in lowercase: \n")
+
+
         count += 1
-        #score += 1
-        print("\nNext Round: \n")
-        wordMeans = nextWord()
-        userGuess = input("Type your answer in lowercase: \n")
-    else:
-        print("\nIncorrect answer. The answer was: \n" + wordMeans)
-        wordMeans = nextWord()
-        userGuess = input("Type your answer in lowercase: \n")
+        
+            
+
+
+    print("Points you got: " + str(score))
+
+        
+
+    print("\nYour final score: " + str(count) + "/6")
+
+
+def startSHgame():
+    print("Samyutha Hastas game now")
+
+
+start = True
+
+startGame = input("Are you ready to start the quiz? First, you will be assessed on Asamyutha Hastasn\n" \
+"Type in yes or no to start (y/n)\n").lower()
+
+
+if startGame == "y":
+    startAHgame()
+    start = True
+else:
+    start = False
+    
+
+while start == True:
+
+    tryAgain = input("Would you like to try again? (y/n)").lower()
+
+    if tryAgain == "y":
+        startAHgame()
+    elif tryAgain == "n":
+        shgame = input("Would you like to start the Samyutha hastas quiz? (y/n)")
+        if shgame == "y":
+            startSHgame()
+        elif shgame == "n":
+            start = False
+            quit
         
 
 
-#print("Points you got: " + str(score))
-
-    
-
-# count += 1
-# print("\nYour final score: " + str(count) + "/5")
-
-
-# if userInput == word1: 
-#     print("\nCorrect!")
-# else:
-#     print("\nOh wrong answer. Try again!")
-#     userInput = input("Type your answer: \n")
-#     if userInput == word1: 
-#         print("\nCorrect!")
 
     
