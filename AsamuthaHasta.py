@@ -14,6 +14,17 @@ AHmeaning = ["flag" , "flag with three corners" , "half flag" , "scissors" , "pe
              "bee" , "swan beak" , "swan wing" , "pincers" , "blossom" , "cock" , "trident"]
 
 
+SamyuthaHasta = ["anjali", "kapotha", "karkata", "swastika", "dola", "pushpaputa", "utsanga", 
+                 "shivalinga", "katakavardhana", "kartaree swastika", "shakatam"
+                 "shanka", "chakra", "samputa", "paasha", "keelaka", "matsya", "koorma", "varaha", 
+                 "garuda", "nagabanda", "khatva", "bherundha", "avahittha"]
+
+SHmeaning = ["salutation", "pigeon", "crab", "cross", "swing", "holding flowers", "discipline", 
+             "shivalingam", "pair of bracelets", "crossing two scissors", "chariot wheel", 
+             "conch", "discus", "containers", "bond", "axle", "fish", "tortoise", "boar"
+             "eagle", "serpant", "cot", "heavenly bird", "to hide"]
+
+
 def nextWord():
     meaning = random.choice(AHmeaning)
     corespword = AHmeaning.index(meaning)
